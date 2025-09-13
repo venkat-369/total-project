@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperDrive Car Company</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: #fff;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    nav a:hover {
+      background: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 2rem;
+      color: #444;
+    }
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .car-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+    }
+    .car-card:hover {
+      transform: scale(1.03);
+    }
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .car-details {
+      padding: 15px;
+    }
+    .car-details h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #222;
+    }
+    .car-details p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚗 SuperDrive Car Company</h1>
+    <p>Explore Our Latest Car Models with Best Prices & Colors</p>
+  </header>
+
+  <nav>
+    <a href="#models">Car Models</a>
+    <a href="#dealers">Dealers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2 id="models" class="section-title">Our Car Models</h2>
+    <div class="car-grid">
+      
+      <!-- Car 1 -->
+      <div class="car-card">
+        <img src="https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_1280.jpg" alt="Sedan">
+        <div class="car-details">
+          <h3>SuperDrive Sedan</h3>
+          <p><b>Colors:</b> Red, Black, White</p>
+          <p><b>Price:</b> ₹12,50,000</p>
+        </div>
+      </div>
+
+      <!-- Car 2 -->
+      <div class="car-card">
+        <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/vehicle-1957037_1280.jpg" alt="SUV">
+        <div class="car-details">
+          <h3>SuperDrive SUV</h3>
+          <p><b>Colors:</b> Blue, Grey, Silver</p>
+          <p><b>Price:</b> ₹22,80,000</p>
+        </div>
+      </div>
+
+      <!-- Car 3 -->
+      <div class="car-card">
+        <img src="https://cdn.pixabay.com/photo/2016/06/24/10/47/ford-mustang-1478522_1280.jpg" alt="Sports Car">
+        <div class="car-details">
+          <h3>SuperDrive Sports</h3>
+          <p><b>Colors:</b> Yellow, Red, Black</p>
+          <p><b>Price:</b> ₹35,00,000</p>
+        </div>
+      </div>
+
+      <!-- Car 4 -->
+      <div class="car-card">
+        <img src="https://cdn.pixabay.com/photo/2017/08/06/18/08/mercedes-benz-2598202_1280.jpg" alt="Luxury Car">
+        <div class="car-details">
+          <h3>SuperDrive Luxury</h3>
+          <p><b>Colors:</b> White, Gold, Matte Black</p>
+          <p><b>Price:</b> ₹50,00,000</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 id="dealers" class="section-title">Dealer Information</h2>
+    <div class="car-card">
+      <div class="car-details">
+        <h3>SuperDrive Main Dealer</h3>
+        <p><b>Phone:</b> +91 98765 43210</p>
+        <p><b>Email:</b> dealer@superdrive.com</p>
+        <p><b>Location:</b> SuperDrive Towers, MG Road, Hyderabad, India</p>
+      </div>
+    </div>
+
+    <h2 id="contact" class="section-title">Contact Us</h2>
+    <div class="car-card">
+      <div class="car-details">
+        <p>For booking & inquiries, reach us at:</p>
+        <p><b>Email:</b> support@superdrive.com</p>
+        <p><b>Phone:</b> +91 90000 11111</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 SuperDrive Car Company | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
