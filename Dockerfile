@@ -1,18 +1,15 @@
-# Use official Nginx lightweight image
+# Use lightweight nginx image
 FROM nginx:alpine
 
-# Set working directory inside Nginx HTML folder
-WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf /usr/share/nginx/html/*
 
-# Remove default Nginx index page
-RUN rm -rf ./*
+# Copy custom static website
+COPY index.html /usr/share/nginx/html/
 
-# Copy your static webpage into container
-COPY index.html .
-
-# Expose port 80 to access the website
+# Expose port
 EXPOSE 80
 
-# Run Nginx in foreground
+# Default command
 CMD ["nginx", "-g", "daemon off;"]
 
