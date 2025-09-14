@@ -1,8 +1,9 @@
+
 pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_USER = "your-dockerhub-username"
+        DOCKER_HUB_USER = "venkat-369"
         IMAGE_NAME = "building-elevation"
         IMAGE_TAG = "latest"
     }
@@ -11,35 +12,28 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/your-repo/building-elevation.git'
+                    url: 'https://github.com/venkat-369/total-project.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh "docker build -t ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ."
-                }
+                sh "docker build -t ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                script {
-                    withDockerRegistry([ credentialsId: 'dockerhub-credentials', url: '' ]) {
-                        sh "docker push ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
-                    }
+                withDockerRegistry([ credentialsId: 'dockerhub-credentials', url: '' ]) {
+                    sh "docker push ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
 
         stage('Deploy Container') {
             steps {
-                script {
-                    sh "docker run -d -p 8080:80 --name elevation-app ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
-                }
+                sh "docker run -d -p 8080:80 --name elevation-app ${DOCKER_HUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} || true"
             }
         }
     }
 }
-
